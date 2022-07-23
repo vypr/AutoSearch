@@ -1,0 +1,10 @@
+sudo apt install -y unzip xvfb libxi6 libgconf-2-4 
+sudo apt-get install -y chromium-browser
+pip install selenium
+cd ~/Downloads/
+wget https://chromedriver.storage.googleapis.com/103.0.5060.134/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv -f chromedriver /usr/local/share/
+sudo chmod +x /usr/local/share/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
