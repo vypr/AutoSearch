@@ -4,6 +4,8 @@ from selenium import webdriver
 from time import sleep
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 url = input("Put search url : ")
 tname = input("Put keywords file (.txt) : ")
 threads = input("threads number : ")
@@ -18,6 +20,7 @@ except :
 ks = f.read().splitlines()
 def search(line):
     page = 1
+
     driver = webdriver.Chrome(options=chrome_options)
     print(f'searching : {line}')
     driver.get(url)
